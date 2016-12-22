@@ -17,11 +17,10 @@ class ShopQuery
     public function getNearestShops($lat, $lng, $distance, $filter)
     {
         $shops = Shop::where('lat', '>', $lat-$distance)->where('lat', '<', $lat+$distance)
-            ->where('lng', '>', $lng-$distance)->where('lng', '<', $lng+$distance);
+            ->where('lng', '>', $lng-$distance)->where('lng', '<', $lng+$distance)
+            ->limit(100);
 
-
-
-        return $shops->with('category')->with('city')->get();
+        return $shops->get();
     }
 
 }

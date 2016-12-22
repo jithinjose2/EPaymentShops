@@ -11,6 +11,4 @@
 |
 */
 
-Route::get('/get-shops', function () {
-    return view('welcome');
-});
+
