@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i');
+
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  position: relative;
+  font-size: 13px;
+}
+
+body {
+  background-color: #bbc2ce;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+  background-color: #e8ebf0;
+}
+
+
+* {
+  outline: none !important;
+}
+
+a:focus,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+
+.site-sidebar {
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin-top: 60px;
+  width: 220px;
+  background-color: #212330;
+}
+
+@media (max-width:991px) {
+  .site-sidebar-opened .site-overlay {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-sidebar {
+    left: -220px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  .site-sidebar-opened .site-sidebar {
+    left: 0;
+  }
+}
+
+.site-sidebar .custom-scroll {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.site-sidebar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-sidebar .sidebar-menu .menu-title {
+  margin-top: 0.75rem;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+
+.site-sidebar .sidebar-menu li {
+  position: relative;
+}
+
+.site-sidebar .sidebar-menu li > a {
+  display: block;
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.site-sidebar .sidebar-menu li > a:hover,
+.site-sidebar .sidebar-menu li.active > a {
+  color: #fff;
+}
+
+
+.site-sidebar .sidebar-menu > li > a .s-icon {
+  float: left;
+  margin-right: 1.125rem;
+}
+
+.site-sidebar .sidebar-menu > li > a .s-icon i {
+  position: relative;
+  top: 1px;
+  font-size: 1.15rem;
+}
+
+.site-sidebar .sidebar-menu > li > a .s-text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.site-sidebar .sidebar-menu > li.with-sub > a .s-caret {
+  float: right;
+  margin-left: 1rem;
+  font-size: 14px;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.site-sidebar .sidebar-menu > li > a .tag {
+  float: right;
+  margin-top: 2px;
+  border-radius: 1rem;
+}
+
+.site-sidebar .sidebar-menu ul {
+  display: none;
+}
+
+.site-sidebar .sidebar-menu ul li > a {
+  padding: 0.5rem 1rem 0.5rem 3.5rem;
+}
+
+.fixed-sidebar .site-sidebar {
+  position: fixed;
+}
+
+.fixed-header .site-header {
+  z-index: 100;
+}
+
+.fixed-header .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.site-header .navbar {
+  padding: 0;
+  background-color: #fff;
+}
+
+.site-header .navbar-left {
+  height: 60px;
+  background-color: #212330;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 768px) {
+.fixed-header .site-header{
+  width:220px;
+}
+}
+
+.site-header .navbar-brand {
+  display: inline-block;
+  float: none;
+  margin: 0;
+  padding: 1.3rem 0 0;
+  height: 60px;
+}
+
+.site-header .navbar-brand .logo {
+  width: 100px;
+  height: 25px;
+  background: url(../img/logo.png) no-repeat;
+}
+
+@media (min-width: 768px) {
+
+}
+
+
+.site-header .toggle-button {
+  position: relative;
+  width: 55px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+
+.site-header .toggle-button.dark {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.site-header .toggle-button span {
+  position: absolute;
+  display: block;
+  top: 50%;
+  right: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.site-header .toggle-button span.hamburger {
+  left: 15px;
+  margin-top: -1px;
+  width: 22px;
+  height: 2px;
+}
+
+.site-header .toggle-button.dark span {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.site-header .toggle-button span:before, 
+.site-header .toggle-button span:after {
+  content: '';
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.site-header .toggle-button span.hamburger:before, 
+.site-header .toggle-button span.hamburger:after {
+  height: 2px;
+}
+
+.site-header .toggle-button.dark span:before, 
+.site-header .toggle-button.dark span:after {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.site-header .toggle-button span.hamburger:before {
+  top: -6px;
+}
+
+.site-header .toggle-button span.hamburger:after {
+  bottom: -6px;
+}
+
+.site-header .toggle-button.dark:hover span,
+.site-header .toggle-button.dark:hover span:before,
+.site-header .toggle-button.dark:hover span:after,
+.site-header .toggle-button.dark:focus span,
+.site-header .toggle-button.dark:focus span:before,
+.site-header .toggle-button.dark:focus span:after {
+  background-color: #fff;
+}
+
+
+@media (max-width: 991px) {  
+  .site-header .navbar {
+    margin-left: 0 !important;
+  }
+}
+
+
+.navbar {
+  padding: 1rem;
+  border-radius: 0;
+}
+
+.navbar-brand,
+.nav-link {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.navbar-light .navbar-brand {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+
+.site-content {
+  margin-left: 0;
+}
+.custom-content{
+ 
+}
+.padding-0{
+  padding: 0 !important;
+}
+.margin-0{
+  margin: 0 !important;
+}
+/* Layout settings */
+
+
+@media (min-width: 768px) {
+
+  .site-content {
+    margin-left: 220px;
+  }
+  .navbar-left {
+    max-width:220px;
+  }
+}
+@media (max-width: 767px){
+  .fixed-header .site-content {
+    padding-top: 60px;
+  }
+  .custom-content{
+   
+  }
+}
+
+
+/* Footer */
+.footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  color: #777;
+  padding: 1rem 0;
+}
+
+/* Jscrollpane */
+.jspPane {
+  width: 100% !important;
+}
