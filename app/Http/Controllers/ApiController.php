@@ -16,9 +16,22 @@ class ApiController extends Controller
         $this->shopQuery = $shopQuery;
     }
 
-    public function getShops()
+    public function getShops(Request $request)
     {
-        $shops = $this->shopQuery->getNearestShops(12.928945299999999, 77.610288, 0.05, []);
+        $this->validate($request, [
+            'from_lat'  => 'required|double',
+            'from_lng'  => 'required|double',
+            'to_lat'    => 'required|double',
+            'to_lng'    => 'required|double'
+        ]);
+
+        $from = ['lat' => $request->get('from_lat'), 'lng' => $request->get('from_lng')];
+        $to = ['lat' => $request->get('to_lat'), 'lng' => $request->get('to_lng')];
+        $filter = [];
+        if($request->has('category_id')) {
+            $filter['category_id'] = $request->get('category_id');
+        }
+        $shops = $this->shopQuery->getNearestShops($from, $to, $filter);
         return $shops->toArray();
     }
 

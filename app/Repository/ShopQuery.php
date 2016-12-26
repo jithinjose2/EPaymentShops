@@ -14,10 +14,10 @@ use EPaymentShops\Models\Shop;
 class ShopQuery
 {
 
-    public function getNearestShops($lat, $lng, $distance, $filter)
+    public function getNearestShops($from, $to, $filter)
     {
-        $shops = Shop::where('lat', '>', $lat-$distance)->where('lat', '<', $lat+$distance)
-            ->where('lng', '>', $lng-$distance)->where('lng', '<', $lng+$distance)
+        $shops = Shop::where('lat', '>', $from['lat'])->where('lat', '<', $to['lat'])
+            ->where('lng', '>', $from['lng'])->where('lng', '<', $from['to'])
             ->limit(100);
 
         return $shops->get();
