@@ -10,5 +10,7 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-
+Route::get('home',function(){
+   return view('template');
+});
 
